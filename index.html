@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maik Game Hub</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #111;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 2px solid #00aaff;
+    }
+    header h1 {
+      margin: 0;
+      color: #00aaff;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: #1a1a1a;
+    }
+    nav a {
+      color: #00aaff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .content {
+      padding: 2rem;
+    }
+    .genre-section {
+      display: flex;
+      justify-content: space-around;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .genre {
+      padding: 1rem;
+      background-color: #333;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .genre:hover {
+      background-color: #00aaff;
+    }
+    footer {
+      background-color: #111;
+      color: #888;
+      text-align: center;
+      padding: 1rem;
+      border-top: 2px solid #00aaff;
+      margin-top: 2rem;
+    }
+
+    /* Адаптивный дизайн */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav {
+        flex-direction: column;
+      }
+      .content {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Maik Game Hub</h1>
+  </header>
+  <nav>
+    <a href="/">Главная</a>
+    <a href="/about.html">О нас</a>
+    <a href="/contact.html">Контакты</a>
+    <a href="https://t.me/+vjWywNX1dzxjMmVk" target="_blank">Telegram</a>
+  </nav>
+  <div class="content">
+    <h2>Выберите жанр игры</h2>
+    <div class="genre-section">
+      <div class="genre" onclick="showGames('shooter')">Шутеры</div>
+      <div class="genre" onclick="showGames('rpg')">Ролевые игры</div>
+      <div class="genre" onclick="showGames('strategy')">Стратегии</div>
+      <div class="genre" onclick="showGames('racing')">Гонки</div>
+    </div>
+
+    <h3 id="games-title">Игры жанра: Шутеры</h3>
+    <div id="games-list">
+      <!-- Здесь будут отображаться игры по выбранному жанру -->
+      <div class="game-card">Fortnite</div>
+      <div class="game-card">Valorant</div>
+    </div>
+
+  </div>
+  <footer>
+    <p>&copy; 2025 Maik Game Hub. Все права защищены.</p>
+    <div class="socials">
+      <a href="https://t.me/+vjWywNX1dzxjMmVk" target="_blank">Telegram</a>
+    </div>
+  </footer>
+
+  <script>
+    // Функция для отображения игр по жанрам
+    function showGames(genre) {
+      let gamesList = document.getElementById("games-list");
+      let title = document.getElementById("games-title");
+      gamesList.innerHTML = ""; // Очистить список игр
+
+      // Заголовок жанра
+      if (genre === 'shooter') {
+        title.innerText = 'Игры жанра: Шутеры';
+        gamesList.innerHTML = '<div class="game-card">Fortnite</div><div class="game-card">Valorant</div>';
+      } else if (genre === 'rpg') {
+        title.innerText = 'Игры жанра: Ролевые игры';
+        gamesList.innerHTML = '<div class="game-card">Genshin Impact</div><div class="game-card">Cyberpunk 2077</div>';
+      } else if (genre === 'strategy') {
+        title.innerText = 'Игры жанра: Стратегии';
+        gamesList.innerHTML = '<div class="game-card">League of Legends</div><div class="game-card">Dota 2</div>';
+      } else if (genre === 'racing') {
+        title.innerText = 'Игры жанра: Гонки';
+        gamesList.innerHTML = '<div class="game-card">Rocket League</div><div class="game-card">Asphalt 9</div>';
+      }
+    }
+  </script>
+</body>
+</html>
