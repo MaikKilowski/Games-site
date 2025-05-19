@@ -1,0 +1,13 @@
+<div class="game-list">
+  <a href="roblox.html" class="game-box">
+    <img src="images/roblox.jpg" alt="Roblox" class="game-img">
+    <span class="game-title">Roblox</span>
+  </a>
+
+  <a href="minecraft.html" class="game-box">
+    <img src="images/minecraft.jpg" alt="Minecraft" class="game-img">
+    <span class="game-title">Minecraft</span>
+  </a>
+
+  <!-- Вставь СЮДА Fortnite -->
+</div>
